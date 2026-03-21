@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="vendas_realizadas", model=get_where_subquery(ref('fact_performance_vendedor'))) }}

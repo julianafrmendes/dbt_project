@@ -1,0 +1,37 @@
+models:
+  - name: fact_performance_vendedor
+    description: "Tabela consolidada de performance dos vendedores agregada por métricas de vendas"
+
+    columns:
+
+      - name: id_vendedor
+        description: "Identificador único do vendedor"
+        tests:
+          - not_null
+
+      - name: vendedor
+        description: "Nome do vendedor"
+        tests:
+          - not_null
+
+      - name: senioridade
+        description: "Nível de senioridade do vendedor"
+
+      - name: regiao
+        description: "Região de atuação do vendedor"
+
+      - name: vendas_realizadas
+        description: "Número total de vendas realizadas pelo vendedor"
+        tests:
+          - not_null
+
+      - name: receita_total
+        description: "Soma da receita líquida das vendas realizadas"
+        tests:
+          - not_null
+
+      - name: ticket_medio
+        description: "Ticket médio por venda do vendedor"
+
+      - name: margem_total
+        description: "Soma das margens das vendas realizadas"

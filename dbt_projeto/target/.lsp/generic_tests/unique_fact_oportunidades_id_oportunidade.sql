@@ -1,0 +1,1 @@
+{{ test_unique(column_name="id_oportunidade", model=get_where_subquery(ref('fact_oportunidades'))) }}

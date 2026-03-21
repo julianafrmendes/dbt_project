@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="receita_liquida", model=get_where_subquery(ref('fact_vendas'))) }}

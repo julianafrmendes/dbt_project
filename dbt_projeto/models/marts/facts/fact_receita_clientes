@@ -1,0 +1,30 @@
+models:
+  - name: int_metricas_cliente
+    description: "Tabela intermediária com métricas agregadas de vendas por cliente"
+
+    columns:
+
+      - name: id_cliente
+        description: "Identificador único do cliente"
+        tests:
+          - not_null
+          - unique
+
+      - name: total_vendas
+        description: "Quantidade total de vendas realizadas pelo cliente"
+        tests:
+          - not_null
+
+      - name: receita_total
+        description: "Receita total gerada pelo cliente"
+        tests:
+          - not_null
+
+      - name: ticket_medio_real
+        description: "Ticket médio real das compras do cliente"
+
+      - name: margem_total
+        description: "Margem total gerada pelo cliente"
+
+      - name: receita_recorrente
+        description: "Receita proveniente de vendas recorrentes do cliente"

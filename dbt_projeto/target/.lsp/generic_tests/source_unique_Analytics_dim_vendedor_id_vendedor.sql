@@ -1,0 +1,1 @@
+{{ test_unique(column_name="id_vendedor", model=get_where_subquery(source('Analytics', 'dim_vendedor'))) }}

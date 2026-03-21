@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="id_venda", model=get_where_subquery(source('Analytics', 'fato_vendas'))) }}

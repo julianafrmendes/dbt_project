@@ -1,0 +1,26 @@
+id_vendedor,nome,tempo_empresa_meses,senioridade,regiao,meta_mensal,time_comercial,status,produtividade,clientes_ativos
+1,Antony Cavalcante,18,Junior,Nordeste,104182,Enterprise,Ativo,0,0
+2,Lunna Fonseca,20,Junior,Sul,102132,Enterprise,Ativo,0,0
+3,Lorenzo Fernandes,11,Junior,Sudeste,119334,Enterprise,Ativo,0,0
+4,Dra. Isabella Ribeiro,7,Junior,Norte,103775,Enterprise,Ativo,0,0
+5,Alice Pimenta,11,Junior,Sul,113166,SMB,Ativo,0,0
+6,Alexia Pimenta,24,Junior,Sul,100347,Enterprise,Ativo,0,0
+7,Samuel Duarte,19,Junior,Sul,93489,Mid Market,Ativo,0,0
+8,Bella Gomes,8,Junior,Sul,95129,Mid Market,Ativo,0,0
+9,Lavínia Oliveira,23,Pleno,Sul,176711,SMB,Ativo,0,0
+10,Heitor Cunha,13,Pleno,Sudeste,206373,Mid Market,Ativo,0,0
+11,Heloisa Nogueira,21,Pleno,Nordeste,172063,Mid Market,Ativo,0,0
+12,Evelyn Casa Grande,41,Pleno,Sul,213550,SMB,Ativo,0,0
+13,Dra. Heloísa Andrade,35,Pleno,Sul,189013,SMB,Ativo,0,0
+14,Liam Mendes,20,Pleno,Norte,181917,Enterprise,Ativo,0,0
+15,Julia Garcia,20,Pleno,Nordeste,197702,SMB,Ativo,0,0
+16,Brenda Vasconcelos,24,Pleno,Sul,183736,Enterprise,Ativo,0,0
+17,Maitê Santos,30,Pleno,Sul,168330,SMB,Ativo,0,0
+18,Aurora Gonçalves,28,Pleno,Centro-Oeste,205684,Enterprise,Ativo,0,0
+19,Isabelly Vieira,70,Senior,Sudeste,471165,Mid Market,Ativo,0,0
+20,Ágatha Martins,28,Senior,Sul,444947,Enterprise,Ativo,0,0
+21,Ravi Lucca Aragão,77,Senior,Norte,334458,Enterprise,Ativo,0,0
+22,Lunna Sousa,52,Senior,Sul,439649,SMB,Ativo,0,0
+23,Sophia da Rocha,87,Senior,Sudeste,372305,Mid Market,Ativo,0,0
+24,Lívia Oliveira,26,Senior,Sudeste,418741,Enterprise,Ativo,0,0
+25,Enrico Martins,75,Senior,Sudeste,364455,SMB,Ativo,0,0
