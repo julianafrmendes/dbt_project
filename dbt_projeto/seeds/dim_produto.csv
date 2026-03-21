@@ -1,0 +1,4 @@
+id_produto,nome_produto,categoria,tipo_plano,ticket_base,margem_percentual,recorrencia_meses,receita_recorrente,margem_contribuicao
+1,Basic,Software,Mensal,1299,0.65,12,1299,844.35
+2,Pro,Software,Mensal,3799,0.72,12,3799,2735.2799999999997
+3,Enterprise,Software,Mensal,13000,0.8,12,13000,10400.0

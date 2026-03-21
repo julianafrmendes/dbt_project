@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="data", model=get_where_subquery(source('Analytics', 'dim_tempo'))) }}

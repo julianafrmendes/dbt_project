@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="custo_estimado", model=get_where_subquery(ref('fact_aquisicao'))) }}

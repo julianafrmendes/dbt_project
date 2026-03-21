@@ -1,0 +1,206 @@
+version: 2
+
+sources:
+  - name: Analytics
+    description: 'Dados brutos do projeto analítico'
+    schema: mart_project
+    loader: bigquery
+    #loaded_at_the_field: 
+    #meta:
+     #owner:
+    
+    tables:
+      - name: dim_tempo
+        description: Dimensão de tempo utilizada para análises temporais das vendas e oportunidades.
+        columns:
+          - name: data
+            description: Data completa.
+            tests:
+              - not_null
+              - unique
+          - name: ano
+            description: Ano da data.
+          - name: mes
+            description: Número do mês.
+          - name: nome_mes
+            description: Nome do mês.
+          - name: trimestre
+            description: Trimestre do ano.
+          - name: semana
+            description: Número da semana no ano.
+          - name: dia
+            description: Dia do mês.
+          - name: dia_semana
+            description: Nome do dia da semana.
+          - name: eh_final_semana
+            description: Indica se a data corresponde a sábado ou domingo.
+          - name: dia_util
+            description: Indica se a data é um dia útil.
+
+      - name: dim_cliente
+        description: Dimensão de clientes contendo características demográficas, comportamentais e métricas de valor.
+        columns:
+          - name: id_cliente
+            description: Identificador único do cliente.
+            tests:
+              - not_null
+          - name: nome_empresa
+            description: Nome da empresa cliente.
+          - name: segmento
+            description: Segmento de atuação do cliente.
+          - name: porte
+            description: Porte da empresa (pequena, média ou grande).
+          - name: cidade
+            description: Cidade onde o cliente está localizado.
+          - name: estado
+            description: Estado onde o cliente está localizado.
+          - name: data_primeira_compra
+            description: Data da primeira compra realizada pelo cliente.
+          - name: canal_aquisicao
+            description: Canal de aquisição do cliente.
+          - name: churn_flag
+            description: Indica se o cliente cancelou ou deixou de comprar.
+          - name: data_churn
+            description: Data em que o churn ocorreu.
+          - name: status_cliente
+            description: Status atual do cliente (ativo ou inativo).
+          - name: meses_ativo
+            description: Quantidade de meses que o cliente permaneceu ativo.
+          - name: ticket_medio
+            description: Ticket médio de compras do cliente.
+          - name: ltv_estimado
+            description: Valor estimado de lifetime value do cliente.
+          - name: cluster_cliente
+            description: Cluster de segmentação do cliente baseado em comportamento.
+
+      - name: dim_vendedor
+        description: Dimensão de vendedores contendo informações de perfil e desempenho comercial.
+        columns:
+          - name: id_vendedor
+            description: Identificador único do vendedor.
+            tests:
+              - not_null
+              - unique
+          - name: nome
+            description: Nome do vendedor.
+          - name: tempo_empresa_meses
+            description: Tempo de empresa em meses.
+          - name: senioridade
+            description: Nível de senioridade do vendedor.
+          - name: regiao
+            description: Região de atuação do vendedor.
+          - name: meta_mensal
+            description: Meta mensal de vendas atribuída ao vendedor.
+          - name: time_comercial
+            description: Time ou equipe comercial ao qual o vendedor pertence.
+          - name: status
+            description: Status do vendedor na empresa.
+          - name: produtividade
+            description: Indicador de produtividade do vendedor.
+          - name: clientes_ativos
+            description: Quantidade de clientes ativos na carteira do vendedor.
+
+      - name: dim_produto
+        description: Dimensão de produtos ou planos vendidos pela empresa.
+        columns:
+          - name: id_produto
+            description: Identificador único do produto.
+            tests:
+              - not_null
+              - unique
+          - name: nome_produto
+            description: Nome do produto ou plano.
+          - name: categoria
+            description: Categoria do produto.
+          - name: tipo_plano
+            description: Tipo de plano oferecido.
+          - name: ticket_base
+            description: Valor base do produto.
+          - name: margem_percentual
+            description: Percentual de margem do produto.
+          - name: recorrencia_meses
+            description: Quantidade de meses de recorrência do plano.
+          - name: receita_recorrente
+            description: Receita recorrente gerada pelo produto.
+          - name: margem_contribuicao
+            description: Margem de contribuição do produto.
+
+      - name: dim_canal
+        description: Dimensão de canais de aquisição e vendas.
+        columns:
+          - name: id_canal
+            description: Identificador único do canal.
+          - name: nome_canal
+            description: Nome do canal de aquisição.
+          - name: tipo_canal
+            description: Tipo do canal (orgânico, pago, parceiro etc.).
+          - name: custo_estimado
+            description: Custo estimado associado ao canal.
+          - name: taxa_conversao_media
+            description: Taxa média de conversão do canal.
+          - name: leads_gerados
+            description: Quantidade de leads gerados pelo canal.
+          - name: clientes_convertidos
+            description: Quantidade de clientes convertidos pelo canal.
+
+      - name: fato_oportunidades
+        description: Tabela fato que registra oportunidades comerciais no pipeline de vendas.
+        columns:
+          - name: id_oportunidade
+            description: Identificador único da oportunidade.
+            tests:
+              - not_null
+              - unique
+          - name: id_cliente
+            description: Identificador do cliente relacionado à oportunidade.
+          - name: id_vendedor
+            description: Identificador do vendedor responsável.
+          - name: id_canal
+            description: Identificador do canal de aquisição.
+          - name: data_criacao
+            description: Data de criação da oportunidade.
+          - name: data_fechamento
+            description: Data de fechamento da oportunidade.
+          - name: etapa_pipeline
+            description: Etapa atual da oportunidade no pipeline de vendas.
+          - name: status
+            description: Status da oportunidade (ganho, perdido ou em andamento).
+          - name: receita_potencial
+            description: Receita potencial associada à oportunidade.
+          - name: probabilidade_conversao
+            description: Probabilidade estimada de conversão da oportunidade.
+          - name: motivo_perda
+            description: Motivo da perda da oportunidade, quando aplicável.
+
+      - name: fato_vendas
+        description: Tabela fato que registra as vendas realizadas pela empresa.
+        columns:
+          - name: id_venda
+            description: Identificador único da venda.
+            tests:
+              - not_null
+              - unique
+          - name: id_cliente
+            description: Identificador do cliente que realizou a compra.
+          - name: id_vendedor
+            description: Identificador do vendedor responsável pela venda.
+          - name: id_produto
+            description: Identificador do produto vendido.
+          - name: id_canal
+            description: Identificador do canal de aquisição da venda.
+          - name: data_venda
+            description: Data em que a venda foi realizada.
+          - name: receita
+            description: Receita bruta da venda.
+          - name: desconto
+            description: Valor de desconto aplicado na venda.
+          - name: receita_liquida
+            description: Receita após aplicação de descontos.
+          - name: margem
+            description: Margem obtida na venda.
+          - name: recorrente
+            description: Indica se a venda gera receita recorrente.
+          
+
+
+        

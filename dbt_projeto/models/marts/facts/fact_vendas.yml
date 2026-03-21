@@ -1,0 +1,83 @@
+models:
+  - name: fact_vendas
+    description: "Tabela factual de vendas consolidadas"
+
+    columns: 
+      
+      - name: id_venda
+        description: "Identificador único da venda"
+        tests:
+          - not_null
+          - unique
+            
+      - name: data_venda
+        description: "Data em que a venda foi realizada"
+        tests:
+          - not_null
+
+      - name: id_cliente
+        description: "Identificador do cliente"
+        tests:
+          - not_null
+          
+      - name: segmento
+        description: "Segmento do cliente (ex: corporativo, varejo)"
+      
+      - name: porte
+        description: "Porte do cliente (pequeno, médio, grande)"
+
+      - name: cluster_cliente
+        description: "Cluster ou agrupamento do cliente"
+
+      - name: id_vendedor
+        description: "Identificador do vendedor"
+        tests:
+          - not_null
+
+      - name: vendedor
+        description: "Nome do vendedor"
+
+      - name: senioridade
+        description: "Nível de senioridade do vendedor"
+
+      - name: regiao
+        description: "Região de atuação do vendedor"
+
+      - name: id_produto
+        description: "Identificador do produto"
+        tests:
+          - not_null
+
+      - name: nome_produto
+        description: "Nome do produto"
+
+      - name: categoria
+        description: "Categoria do produto"
+
+      - name: ticket_base
+        description: "Preço base do produto"
+
+      - name: id_canal
+        description: "Identificador do canal de aquisição"
+        tests:
+          - not_null
+
+      - name: nome_canal
+        description: "Nome do canal de aquisição"
+
+      - name: tipo_canal
+        description: "Tipo do canal (pago, orgânico, referral)"
+
+      - name: desconto
+        description: "Percentual de desconto aplicado"
+
+      - name: receita_liquida
+        description: "Receita após desconto"
+        tests:
+          - not_null
+
+      - name: margem
+        description: "Margem da venda"
+
+      - name: recorrente
+        description: "Flag indicando se a venda é recorrente"

@@ -1,0 +1,32 @@
+models:
+  - name: fact_aquisicao
+    description: "Tabela consolidade para medida de custo de aquisição."
+
+    columns:
+
+      - name: id_cliente
+        description: "Identificador único do cliente"
+        tests:
+          - not_null
+
+      - name: canal_aquisicao
+        description: "Canal utilizado na aquisição do cliente"
+
+      - name: tipo_canal
+        description: "Tipo do canal (Pago, Orgânico, Referral)"
+
+      - name: custo_estimado
+        description: "Custo estimado do canal"
+        tests:
+          - not_null
+
+      - name: categoria_custo
+        description: "Classificação do custo do canal"
+
+      - name: data_primeira_compra
+        description: "Data da primeira compra do cliente"
+        tests:
+          - not_null
+
+      - name: is_paid_acquisition
+        description: "Flag indicando se a aquisição foi paga (1 = sim, 0 = não)"
