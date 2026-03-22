@@ -9,16 +9,24 @@ A proposta central foi integrar dados de Marketing, Vendas e Customer Success, c
 O projeto permite:
 
 Identificar gargalos no pipeline de vendas
+
 Avaliar a eficiência e qualidade da receita
+
 Apoiar decisões estratégicas com base em dados
+
 Melhorar a previsibilidade e sustentabilidade do crescimento
+
 
 Para isso, foram desenvolvidas métricas-chave de performance comercial, como:
 
 Win rate e ciclo médio de vendas
+
 Ticket médio e receita por venda
+
 Margem média e desconto aplicado
+
 Taxa de recorrência de clientes
+
 Sales velocity (velocidade de geração de receita)
 
 A partir dessas métricas, é possível entender não apenas o volume de vendas, mas a eficiência, a qualidade e a escalabilidade da operação comercial.
